@@ -1,1 +1,3 @@
 # ubuntu-dotnet
+
+Stable baseimage
