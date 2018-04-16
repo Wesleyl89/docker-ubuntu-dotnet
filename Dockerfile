@@ -28,4 +28,5 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
  && dpkg-reconfigure -f noninteractive tzdata \
  && apt-get clean
 
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 CMD ["bash"]
