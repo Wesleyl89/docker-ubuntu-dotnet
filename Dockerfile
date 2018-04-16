@@ -1,7 +1,6 @@
 FROM ubuntu:17.10
 MAINTAINER tim@chaubet.be
 LABEL dotnet-version="2.1.4"
-ADD VERSION .
 
 ENV TZ 'Europe/Brussels'
 
