@@ -6,8 +6,10 @@ ENV TZ 'Europe/Brussels'
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && echo $TZ > /etc/timezone \
- && rm /etc/localtime \
- && apt-get install -y net-tools \
+ && rm /etc/localtime 
+
+RUN DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y net-tools \
                        iputils-ping \
                        curl \
                        wget \
