@@ -26,5 +26,5 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 CMD ["bash"]
