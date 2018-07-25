@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 MAINTAINER tim@chaubet.be
-LABEL dotnet-version="2.1"
+LABEL dotnet-version="2.1.4"
 
 ENV TZ 'Europe/Brussels'
 
@@ -22,8 +22,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 RUN curl http://ftp.de.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u2_amd64.deb -o libicu57_57.1-6+deb9u2_amd64.deb \
  && dpkg -i libicu57_57.1-6+deb9u2_amd64.deb
  
-#RUN apt-get install -y dotnet-sdk-2.1 \
-#                       aspnetcore-store-2.0.6 
+RUN apt-get install -y dotnet-sdk-2.1.4 \
+                       aspnetcore-store-2.0.6 
                        
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
  && dpkg-reconfigure -f noninteractive tzdata \
