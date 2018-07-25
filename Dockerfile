@@ -5,14 +5,14 @@ LABEL dotnet-version="2.1.4"
 ENV TZ 'Europe/Brussels'
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
- && echo $TZ > /etc/timezone 
+ && echo $TZ > /etc/timezone \
  && apt-get install -y net-tools \
                        iputils-ping \
                        curl \
                        wget \
                        unzip \
                        tzdata \
-                       gpg 
+                       gpg \
  && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
  && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
