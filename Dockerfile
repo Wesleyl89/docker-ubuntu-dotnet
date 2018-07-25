@@ -19,6 +19,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
  && apt-get update 
 
+RUN curl http://ftp.de.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u2_amd64.deb -o libicu57_57.1-6+deb9u2_amd64.deb \
+ && dpkg -i libicu57_57.1-6+deb9u2_amd64.deb
+ 
 #RUN apt-get install -y dotnet-sdk-2.1 \
 #                       aspnetcore-store-2.0.6 
                        
