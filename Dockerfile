@@ -12,8 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
                        wget \
                        unzip \
                        tzdata \
- && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
- && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg \
  && wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb \
  && dpkg -i packages-microsoft-prod.deb \
  && add-apt-repository universe \
