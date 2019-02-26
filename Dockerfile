@@ -18,7 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list' \
  && apt-get update 
 
-RUN apt-get install -y dotnet-sdk-2.1.4 \
+RUN apt-get install -y dotnet-sdk-2.1 \
                        aspnetcore-store-2.0.6 
                        
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
